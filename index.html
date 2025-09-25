@@ -6,20 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cal AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.45.0"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.1.1/",
+        "react": "https://aistudiocdn.com/react@^19.1.1",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+        "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.45.0"
+      }
+    }
+    </script>
+    <!-- 
+      WARNING: This script makes your API key available in the browser.
+      This is a workaround for static deployments like GitHub Pages and is a SECURITY RISK as it
+      exposes your key to the public. For a production app, use a backend proxy.
+    -->
+    <script>
+      var process = {
+        env: {
+          API_KEY: 'AIzaSyD_h8zmEaTwYggBxru986dK2mLJhMYw3dE'
+        }
+      };
+    </script>
+    <!-- Babel for in-browser JSX/TSX transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
   <body class="bg-gray-50">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- 
+      Changed script type to "text/babel" to enable in-browser transpilation.
+      - data-presets tells Babel to use presets for React and TypeScript.
+      - data-type="module" is necessary to support ES module syntax (import/export).
+    -->
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
