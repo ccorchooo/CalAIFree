@@ -1,0 +1,7 @@
+{
+  "name": "Gemini Meal Scanner",
+  "description": "An intelligent app that uses your camera to identify meals, list ingredients, and estimate calories to help you track your diet.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
